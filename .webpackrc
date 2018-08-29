@@ -1,0 +1,8 @@
+{
+  "proxy": {
+    "/api": {
+      "target": "http://your-api-server",
+      "changeOrigin": true
+    }
+  }
+}
