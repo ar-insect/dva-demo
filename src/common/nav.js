@@ -13,10 +13,14 @@ import { getPlainNode } from '../utils'
 export function getLayout(layoutName, app) {
     switch (layoutName) {
         case 'BasicLayout':
-            return dynamicWrapper(app, [], () => import('../layouts/BasicLayout'))
+            return dynamicWrapper(
+                app, [], () => import('../layouts/BasicLayout')
+            )
             break
         case 'UserLayout':
-            return dynamicWrapper(app, [], () => import('../layouts/UserLayout'))
+            return dynamicWrapper(
+                app, [], () => import('../layouts/UserLayout')
+            )
             break
         case 'ManagerLayout':
         // TODO: here is dynamic manager layout
