@@ -5,7 +5,7 @@ import { connect } from 'dva'
 function ForgetPwd() {
   return (
     <div >
-      登录
+      忘记密码
     </div>
   )
 }

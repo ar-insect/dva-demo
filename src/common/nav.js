@@ -50,7 +50,7 @@ export const getNavConfig = (app, layout) => {
                     name: '交易中心',
                     path: 'transaction',
                     component: dynamicWrapper(app, [], () => import('../routes/Transaction/index')),
-                }
+                },
             ],
         }
     } else if ('UserLayout' === layout) {
@@ -73,7 +73,7 @@ export const getNavConfig = (app, layout) => {
                 },
                 {
                     name: '忘记密码',
-                    path: 'forgetPassword',
+                    path: 'forgetPwd',
                     component: dynamicWrapper(app, [], () => import('../routes/User/forgetPwd')),
                 },
             ],

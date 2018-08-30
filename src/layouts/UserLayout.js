@@ -7,7 +7,7 @@ import { Layout } from 'element-react'
 import { getNavConfig, getRouteParams } from '../common/nav'
 import styles from './UserLayout.less'
 // import logo from '../assets/xxxx.png'
-
+import Login from '../routes/User/login'
 @connect(state => ({}))
 export default class UserLayout extends PureComponent {
   static childContextTypes = {
@@ -19,15 +19,20 @@ export default class UserLayout extends PureComponent {
     return { location }
   }
 
-  render() {
-    const { location, app } = this.props
-    const { pathname } = location
-    let title = '用户中心'
-    debugger
+  UNSAFE_componentWillMount() {
+    const { app } = this.props
     const navConfig = getNavConfig(app, 'UserLayout')
     const routeParams = getRouteParams(navConfig,'UserLayout') || []
+    this.routeParams = routeParams
+  }
+
+  render() {
+    const { location: { pathname } } = this.props
+    // const { patnamhe } = location
+    let title = '用户中心'
+    // debugger
     const getPageTitle = () => {
-        routeParams.forEach((item) => {
+        this.routeParams.forEach((item) => {
             if (item.path === pathname) {
                 title = `${item.name}`
             }
@@ -39,7 +44,6 @@ export default class UserLayout extends PureComponent {
         <div className={styles.container}>
           
           <div className={styles.main}>
-          sdfsdfsdfsdf
             <Switch>
                 {
                     this.routeParams && 
