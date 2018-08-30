@@ -1,9 +1,11 @@
 
 export default {
 
-  namespace: 'example',
+  namespace: 'user',
 
-  state: {},
+  state: {
+    
+  },
 
   subscriptions: {
     setup({ dispatch, history }) {  // eslint-disable-line
@@ -22,4 +24,4 @@ export default {
     },
   },
 
-};
+}
