@@ -15,6 +15,9 @@ export function getLayout(layoutName, app) {
         case 'BasicLayout':
             return dynamicWrapper(app, [], () => import('../layouts/BasicLayout'))
             break
+        case 'UserLayout':
+            return dynamicWrapper(app, [], () => import('../layouts/UserLayout'))
+            break
         case 'ManagerLayout':
         // TODO: here is dynamic manager layout
             break
@@ -50,7 +53,31 @@ export const getNavConfig = (app, layout) => {
                 }
             ],
         }
-        
+    } else if ('UserLayout' === layout) {
+        return {
+            name: '用户中心', 
+            exact: true,
+            path: '/user',
+            layout: 'UserLayout',
+            component: dynamicWrapper(app, [], () => import('../layouts/UserLayout')),
+            children: [
+                {
+                    name: '登录',
+                    path: 'login',
+                    component: dynamicWrapper(app, [], () => import('../routes/User/login')),
+                },
+                {
+                    name: '注册',
+                    path: 'register',
+                    component: dynamicWrapper(app, [], () => import('../routes/User/register')),
+                },
+                {
+                    name: '忘记密码',
+                    path: 'forgetPassword',
+                    component: dynamicWrapper(app, [], () => import('../routes/User/forgetPwd')),
+                },
+            ],
+        }
     }
 
     return null
@@ -59,7 +86,8 @@ export const getNavConfig = (app, layout) => {
 export const getRouteParams = (nav, layout) => {
     if (layout === nav.layout) {
         const clone = {...nav}
-        return getPlainNode(clone.children)
+        // debugger
+        return getPlainNode(clone.children, clone.path)
     }
 }
 

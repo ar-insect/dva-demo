@@ -47,7 +47,7 @@ export default class BasicLayout extends PureComponent {
                                     )
                                 }
                                 <Redirect exact from="/" to="/home" />
-
+                                
                             </Switch>
                         </div>
                     </Layout.Col>
