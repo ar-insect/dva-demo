@@ -1,7 +1,7 @@
 {
   "proxy": {
     "/api": {
-      "target": "http://your-api-server",
+      "target": "http://localhost:8000",
       "changeOrigin": true
     }
   }
