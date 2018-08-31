@@ -30,7 +30,7 @@ export default class UserLayout extends PureComponent {
     const { location: { pathname } } = this.props
     // const { patnamhe } = location
     let title = '用户中心'
-    // debugger
+    debugger
     const getPageTitle = () => {
         this.routeParams.forEach((item) => {
             if (item.path === pathname) {

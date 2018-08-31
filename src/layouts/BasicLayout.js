@@ -24,6 +24,8 @@ export default class BasicLayout extends PureComponent {
     }
 
     render() {
+        const { location : { pathname } } = this.props
+        // debugger
         const layout = (
             <div className={styles.container}>
                 <Layout.Row>
