@@ -11,8 +11,8 @@ function RouterConfig({ history, app }) {
   return (
     <Router history={history}>
       <Switch>
-        <Route path="/" exact render={props => <BasicLayout {...props} {...passProps} />} />
         <Route path="/user" render={props => <UserLayout {...props} {...passProps} />} />
+        <Route path="/" render={props => <BasicLayout {...props} {...passProps} />} />
       </Switch>
     </Router>
   )
