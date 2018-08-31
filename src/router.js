@@ -1,6 +1,6 @@
 import React from 'react'
 import { Router, Route, Switch } from 'dva/router'
-import dynamic from 'dva/dynamic'
+// import dynamic from 'dva/dynamic'
 import { getLayout } from './common/nav'
 
 function RouterConfig({ history, app }) {
